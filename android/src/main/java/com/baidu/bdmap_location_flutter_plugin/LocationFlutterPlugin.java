@@ -336,6 +336,9 @@ public class LocationFlutterPlugin implements MethodCallHandler, EventChannel.St
                 if (bdLocation.getLocType() == BDLocation.TypeGpsLocation
                         || bdLocation.getLocType() == BDLocation.TypeNetWorkLocation
                         || bdLocation.getLocType() == BDLocation.TypeOffLineLocation) {
+                    result.put("adCode", bdLocation.getAdCode());
+                    result.put("speed", bdLocation.getSpeed());
+                    result.put("direction", bdLocation.getDirection());
                     result.put("locType", bdLocation.getLocType()); // 定位结果类型
                     result.put("locTime", bdLocation.getTime()); // 定位成功时间
                     result.put("latitude", bdLocation.getLatitude()); // 纬度

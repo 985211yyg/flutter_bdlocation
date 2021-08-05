@@ -1,6 +1,9 @@
 /// 百度定位结果类，用于存储各类定位结果信息
 class BaiduLocation {
   final String locTime;
+  final String adCode;
+  final double direction;
+  final double speed;
 
   /// 定位成功时间
   final int locType;
@@ -55,7 +58,10 @@ class BaiduLocation {
   /// 定位失败描述信息
 
   BaiduLocation(
-      {this.locTime,
+      {this.adCode,
+      this.direction,
+      this.speed,
+      this.locTime,
       this.locType,
       this.radius,
       this.latitude,
@@ -76,6 +82,9 @@ class BaiduLocation {
   /// 根据传入的map生成BaiduLocation对象
   factory BaiduLocation.fromMap(dynamic value) {
     return new BaiduLocation(
+      adCode: value['adCode'],
+      direction: value['direction'],
+      speed: value['speed'],
       locTime: value['locTime'],
       locType: value['locType'],
       radius: value['radius'],
@@ -99,6 +108,9 @@ class BaiduLocation {
   /// 获取对本类所有变量赋值后的map键值对
   Map getMap() {
     return {
+      "adCode": adCode,
+      "direction": direction,
+      "speed": speed,
       "locTime": locTime,
       "locType": locType,
       "radius": radius,
