@@ -1,0 +1,31 @@
+name: flutter_bmflocation
+description: BaiduMapLocation plugin for flutter. This plugin provides a cross-platform (iOS, Android) API to request location.
+version: 1.0.4
+homepage: https://lbsyun.baidu.com/index.php?title=flutter/loc
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  flutter: ^1.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  uuid: ^2.0.1
+  permission_handler: ^5.0.1+1
+  flutter_baidu_mapapi_base: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  plugin:
+    platforms:
+      android:
+        package: com.baidu.bdmap_location_flutter_plugin
+        pluginClass: LocationFlutterPlugin
+      ios:
+        pluginClass: LocationFlutterPlugin
+
